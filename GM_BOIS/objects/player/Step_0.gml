@@ -15,3 +15,9 @@ else if(keyboard_check_released(vk_shift))
 	w_speed = global.walk_speed;
 }
 
+timer ++;
+if(timer > room_speed/2)
+{
+	image_index ++;
+	timer = 0;	
+}
