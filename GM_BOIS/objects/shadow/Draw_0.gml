@@ -11,13 +11,13 @@ var sy = 25;
 
 gpu_set_fog(true, c_black, 0, 1);
 draw_sprite_pos(sprite_index, image_index, 
-				x-(sprite_width/4)-sx, 
+				x-(sprite_width/3)-sx, 
 				y-sy, 
-				x+(sprite_width/4)-sx, 
+				x+(sprite_width/3)-sx, 
 				y-sy,
-				x+(sprite_width/4), 
+				x+(sprite_width/3), 
 				y, 
-				x-(sprite_width/4), 
+				x-(sprite_width/3), 
 				y,
 				0.5);
 gpu_set_fog(false, c_white, 0, 0);

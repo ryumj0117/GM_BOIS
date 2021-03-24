@@ -4,6 +4,7 @@
     {"id":{"name":"Tile","path":"sprites/Tile/Tile.yy",},"order":1,},
     {"id":{"name":"shadow","path":"objects/shadow/shadow.yy",},"order":1,},
     {"id":{"name":"Player","path":"sprites/Player/Player.yy",},"order":0,},
+    {"id":{"name":"RGB","path":"objects/RGB/RGB.yy",},"order":2,},
     {"id":{"name":"player","path":"objects/player/player.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

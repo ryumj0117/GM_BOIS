@@ -19,5 +19,5 @@ timer ++;
 if(timer > room_speed/2)
 {
 	image_index ++;
-	timer = 0;	
+	timer = 0;
 }
