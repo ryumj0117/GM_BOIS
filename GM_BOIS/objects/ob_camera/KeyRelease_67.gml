@@ -1,0 +1,1 @@
+if(target == ob_cursor) target = ob_player;
