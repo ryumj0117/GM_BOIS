@@ -9,6 +9,7 @@
     {"id":{"name":"ob_shadow","path":"objects/ob_shadow/ob_shadow.yy",},"order":1,},
     {"id":{"name":"sp_shadow","path":"sprites/sp_shadow/sp_shadow.yy",},"order":2,},
     {"id":{"name":"sp_player_left","path":"sprites/sp_player_left/sp_player_left.yy",},"order":2,},
+    {"id":{"name":"Title","path":"sprites/Title/Title.yy",},"order":0,},
     {"id":{"name":"ob_cursor","path":"objects/ob_cursor/ob_cursor.yy",},"order":3,},
     {"id":{"name":"sp_player_idle","path":"sprites/sp_player_idle/sp_player_idle.yy",},"order":1,},
     {"id":{"name":"ob_camera","path":"objects/ob_camera/ob_camera.yy",},"order":2,},
@@ -62,7 +63,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.2.556",
+    "IDEVersion": "2.3.1.542",
   },
   "resourceVersion": "1.4",
   "name": "GM_BOIS",
