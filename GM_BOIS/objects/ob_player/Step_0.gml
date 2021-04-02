@@ -6,10 +6,34 @@ var down = keyboard_check(ord("S"));
 var input_x = right-left;
 var input_y = down-up;
 
-var x_speed = input_x*w_speed*delta_time;
-var y_speed = input_y*w_speed*delta_time;
+if(input_x != 0)
+{
+	x_speed = input_x*w_speed*delta_time;
+}
+if(input_y != 0)
+{
+	y_speed = input_y*w_speed*delta_time;
+}
 
-//actual movement
+//collision and smooth stop
+if(place_meeting(x + x_speed, y, all))
+{
+	x_speed = 0;
+}
+else
+{
+	x_speed -= x_speed / 15;
+}
+if(place_meeting(x, y + y_speed, all))
+{
+	y_speed = 0;
+}
+else
+{
+	y_speed -= y_speed / 15;	
+}
+
+//actual move
 x += x_speed;
 y += y_speed;
 
@@ -50,6 +74,7 @@ else if(keyboard_check_released(vk_shift))
 {
 	w_speed = global.walk_speed;
 }
+
 
 //timer
 /*
