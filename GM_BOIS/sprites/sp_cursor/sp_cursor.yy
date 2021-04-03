@@ -21,8 +21,8 @@
     "path": "texturegroups/Default",
   },
   "swatchColours": null,
-  "gridX": 8,
-  "gridY": 8,
+  "gridX": 2,
+  "gridY": 2,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"6e8b05c3-46be-40ce-9f4a-ed3f6a8d79e7","path":"sprites/sp_cursor/sp_cursor.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"6e8b05c3-46be-40ce-9f4a-ed3f6a8d79e7","path":"sprites/sp_cursor/sp_cursor.yy",},"LayerId":{"name":"0ce141a2-baf1-4d72-99f0-9f71dea8b7be","path":"sprites/sp_cursor/sp_cursor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0ce141a2-baf1-4d72-99f0-9f71dea8b7be","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "sp_gui",
+    "path": "folders/Sprites/sp_gui.yy",
   },
   "resourceVersion": "1.0",
   "name": "sp_cursor",

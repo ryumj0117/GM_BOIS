@@ -1,12 +1,17 @@
-timer = 0;
+//timer = 0;
+
+//setup
+hp = 4;
+dead = false;
 
 global.walk_speed = 0.0003;
 
 w_speed = global.walk_speed;
+
 x_speed = 0;
 y_speed = 0;
-x_t = x;
-y_t = y;
+
+m_on = false;
 
 function percent(sp)
 {

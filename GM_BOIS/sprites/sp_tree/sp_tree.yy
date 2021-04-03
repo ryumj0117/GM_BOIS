@@ -1,5 +1,5 @@
 {
-  "bboxMode": 2,
+  "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
   "origin": 7,
@@ -7,9 +7,9 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 80,
-  "bbox_right": 175,
-  "bbox_top": 192,
+  "bbox_left": 16,
+  "bbox_right": 239,
+  "bbox_top": 0,
   "bbox_bottom": 255,
   "HTile": false,
   "VTile": false,
@@ -21,8 +21,8 @@
     "path": "texturegroups/Default",
   },
   "swatchColours": null,
-  "gridX": 8,
-  "gridY": 8,
+  "gridX": 16,
+  "gridY": 16,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"df545f3b-52f7-4fd1-8432-2ca8de5d8353","path":"sprites/sp_tree/sp_tree.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"df545f3b-52f7-4fd1-8432-2ca8de5d8353","path":"sprites/sp_tree/sp_tree.yy",},"LayerId":{"name":"4d5f876a-6e2c-4f07-be5f-24269016eecf","path":"sprites/sp_tree/sp_tree.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},

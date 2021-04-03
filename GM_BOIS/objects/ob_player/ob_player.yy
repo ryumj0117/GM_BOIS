@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "ob_shadow",
-    "path": "objects/ob_shadow/ob_shadow.yy",
+    "name": "pr_object",
+    "path": "objects/pr_object/pr_object.yy",
   },
   "physicsObject": true,
   "physicsSensor": false,

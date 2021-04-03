@@ -6,32 +6,28 @@ var down = keyboard_check(ord("S"));
 var input_x = right-left;
 var input_y = down-up;
 
-if(input_x != 0)
+if(input_x != 0 && place_free(x + w_speed, y))
 {
 	x_speed = input_x*w_speed*delta_time;
 }
-if(input_y != 0)
+if(input_y != 0 && place_free(x, y + w_speed))
 {
 	y_speed = input_y*w_speed*delta_time;
 }
 
-//collision and smooth stop
-if(place_meeting(x + x_speed, y, all))
+//collision
+if(place_meeting(x + x_speed, y, ob_wall))
 {
 	x_speed = 0;
 }
-else
-{
-	x_speed -= x_speed / 15;
-}
-if(place_meeting(x, y + y_speed, all))
+if(place_meeting(x, y + y_speed, ob_wall))
 {
 	y_speed = 0;
 }
-else
-{
-	y_speed -= y_speed / 15;	
-}
+
+//slippery stop
+x_speed -= x_speed / 15;
+y_speed -= y_speed / 15;
 
 //actual move
 x += x_speed;
@@ -75,6 +71,38 @@ else if(keyboard_check_released(vk_shift))
 	w_speed = global.walk_speed;
 }
 
+//test
+if(place_meeting(x, y, ob_cursor) && mouse_check_button(mb_middle))
+{
+	m_on = true;
+}
+if(!mouse_check_button(mb_middle))
+{
+	m_on = false;
+}
+if(m_on)
+{
+	ob_cursor.visible = false;
+	
+	image_xscale = lerp(image_xscale, 0.6, 0.5);
+	image_yscale = lerp(image_yscale, 1.2, 0.5);
+	
+	x = lerp(x, mouse_x, 0.05);
+	y = lerp(y, mouse_y, 0.05);
+}
+else
+{
+	ob_cursor.visible = true;
+	image_xscale = lerp(image_xscale, 1, 0.5);
+	image_yscale = lerp(image_yscale, 1, 0.5);
+}
+
+//testing death
+if(hp <= 0 && dead == false)
+{
+	dead = true;
+	show_debug_message("seems like you are died");
+}
 
 //timer
 /*
