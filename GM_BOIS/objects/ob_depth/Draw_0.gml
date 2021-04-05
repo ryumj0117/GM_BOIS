@@ -27,6 +27,6 @@ repeat(inst_num)
 	{
 		draw_self();
 	}
-	
+
 	yy ++;
 }

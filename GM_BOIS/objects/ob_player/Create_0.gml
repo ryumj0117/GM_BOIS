@@ -1,5 +1,3 @@
-//timer = 0;
-
 //setup
 hp = 4;
 dead = false;

@@ -25,6 +25,7 @@ if(place_meeting(x, y + y_speed, ob_wall))
 	y_speed = 0;
 }
 
+
 //slippery stop
 x_speed -= x_speed / 15;
 y_speed -= y_speed / 15;
@@ -84,7 +85,7 @@ if(m_on)
 {
 	ob_cursor.visible = false;
 	
-	image_xscale = lerp(image_xscale, 0.6, 0.5);
+	image_xscale = lerp(image_xscale, 0.8, 0.5);
 	image_yscale = lerp(image_yscale, 1.2, 0.5);
 	
 	x = lerp(x, mouse_x, 0.05);
@@ -97,7 +98,7 @@ else
 	image_yscale = lerp(image_yscale, 1, 0.5);
 }
 
-//testing death
+//death
 if(hp <= 0 && dead == false)
 {
 	dead = true;

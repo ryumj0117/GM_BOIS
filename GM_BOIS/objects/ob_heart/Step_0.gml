@@ -5,3 +5,23 @@ if(ob_player.hp >= 0)
 {
 	image_index = ob_player.hp;
 }
+
+//testing fade in / out
+if(ob_player.m_on == false)
+{
+	if(timer > 0)
+	{
+		timer --;
+	}
+	image_alpha = alpha - timer / room_speed;
+}
+if(ob_player.m_on == true)
+{
+	if(timer < room_speed)
+	{
+		timer ++;
+	}
+	image_alpha = alpha - timer / room_speed;
+}
+
+
