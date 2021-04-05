@@ -1,1 +1,1 @@
-collidable = false;
+collidable = true;

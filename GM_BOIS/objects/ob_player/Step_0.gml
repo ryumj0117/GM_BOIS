@@ -27,8 +27,8 @@ if(place_meeting(x, y + y_speed, ob_wall))
 
 
 //slippery stop
-x_speed -= x_speed / 15;
-y_speed -= y_speed / 15;
+x_speed -= x_speed / stop_speed;
+y_speed -= y_speed / stop_speed;
 
 //actual move
 x += x_speed;

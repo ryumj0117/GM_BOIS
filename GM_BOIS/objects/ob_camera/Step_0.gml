@@ -1,7 +1,12 @@
-x += (x_to - x)/25;
-y += (y_to - y)/25;
+x += (x_to - x) / cam_speed;
+y += (y_to - y) / cam_speed;
 
-if(target != noone)
+if(target == ob_cursor)
+{
+	x_to = ob_player.x + (ob_cursor.x - x) * sight_range;
+	y_to = ob_player.y + (ob_cursor.y - y) * sight_range;
+}
+else if(target != noone)
 {
 	x_to = target.x;
 	y_to = target.y-50;

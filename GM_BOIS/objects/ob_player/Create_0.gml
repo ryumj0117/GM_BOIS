@@ -9,6 +9,9 @@ w_speed = global.walk_speed;
 x_speed = 0;
 y_speed = 0;
 
+//higher value to slippery
+stop_speed = 20;
+
 m_on = false;
 
 function percent(sp)
