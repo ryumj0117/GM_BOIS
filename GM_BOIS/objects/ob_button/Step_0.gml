@@ -14,6 +14,7 @@ if point_in_rectangle(mouse_x, mouse_y, x - 128, y - 128, x + 128, y + 128)
 	{
 		room_goto(test);
 	}
+		
 }
 else
 {

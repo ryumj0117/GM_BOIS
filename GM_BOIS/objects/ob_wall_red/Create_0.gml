@@ -1,1 +1,3 @@
-collidable = false;
+event_inherited();
+
+breakable = false;

@@ -6,6 +6,7 @@ var down = keyboard_check(ord("S"));
 var input_x = right-left;
 var input_y = down-up;
 
+//set movement input
 if(input_x != 0 && place_free(x + w_speed, y))
 {
 	x_speed = input_x*w_speed*delta_time;
@@ -14,6 +15,10 @@ if(input_y != 0 && place_free(x, y + w_speed))
 {
 	y_speed = input_y*w_speed*delta_time;
 }
+
+//slippery stop
+x_speed -= x_speed / stop_speed;
+y_speed -= y_speed / stop_speed;
 
 //collision
 if(place_meeting(x + x_speed, y, ob_wall))
@@ -25,42 +30,45 @@ if(place_meeting(x, y + y_speed, ob_wall))
 	y_speed = 0;
 }
 
-
-//slippery stop
-x_speed -= x_speed / stop_speed;
-y_speed -= y_speed / stop_speed;
-
 //actual move
-x += x_speed;
-y += y_speed;
+if(!dead)
+{
+	x += x_speed;
+	y += y_speed;
+}
+
 
 //move animation
-img_speed = w_speed * 1000;
-if(up)
+if(!dead)
 {
-	image_speed = img_speed;
-	sprite_index = sp_player_up;
+	img_speed = w_speed * 1000;
+	if(up)
+	{
+		image_speed = img_speed;
+		sprite_index = sp_player_up;
+	}
+	else if(down)
+	{
+		image_speed = img_speed;
+		sprite_index = sp_player_down;
+	}
+	else if(left)
+	{
+		image_speed = img_speed;
+		sprite_index = sp_player_left;
+	}
+	else if(right)
+	{
+		image_speed = img_speed;
+		sprite_index = sp_player_right;
+	}
+	else
+	{
+		image_speed = 0;
+		image_index = 0;
+	}
 }
-else if(down)
-{
-	image_speed = img_speed;
-	sprite_index = sp_player_down;
-}
-else if(left)
-{
-	image_speed = img_speed;
-	sprite_index = sp_player_left;
-}
-else if(right)
-{
-	image_speed = img_speed;
-	sprite_index = sp_player_right;
-}
-else
-{
-	image_speed = 0;
-	image_index = 0;
-}
+
 
 //sprint
 if(keyboard_check_pressed(vk_shift))
@@ -72,44 +80,71 @@ else if(keyboard_check_released(vk_shift))
 	w_speed = global.walk_speed;
 }
 
+
+
 //test
-if(place_meeting(x, y, ob_cursor) && mouse_check_button(mb_middle))
-{
-	m_on = true;
-}
-if(!mouse_check_button(mb_middle))
-{
-	m_on = false;
-}
+if(place_meeting(x, y, ob_cursor) && mouse_check_button(mb_middle) && allow_cheat) m_on = true;
+if(!mouse_check_button(mb_middle)) m_on = false;
+
 if(m_on)
 {
 	ob_cursor.visible = false;
-	
-	image_xscale = lerp(image_xscale, 0.8, 0.5);
-	image_yscale = lerp(image_yscale, 1.2, 0.5);
-	
-	x = lerp(x, mouse_x, 0.05);
-	y = lerp(y, mouse_y, 0.05);
+	juice_up();
+	follow(ob_cursor.x, ob_cursor.y);
 }
+
 else
 {
 	ob_cursor.visible = true;
-	image_xscale = lerp(image_xscale, 1, 0.5);
-	image_yscale = lerp(image_yscale, 1, 0.5);
+	juice_down();
+}
+
+//damage & heal
+if(keyboard_check_pressed(vk_up) && hp < max_hp && !dead) 
+{
+	hp += 1;
+	
+	//flash
+	f_color = c_lime;
+	f_alpha = 1.5;
+}
+
+if(keyboard_check_pressed(vk_down) && hp > 0 && !dead) 
+{
+	hp -= 1;
+	
+	//flash
+	f_color = c_red;
+	f_alpha = 1;
+	
+	//juice
+	juice_up();
+}
+juice_down();
+
+//flash down
+if(f_alpha > 0)
+{
+	f_alpha -= 0.05;
 }
 
 //death
 if(hp <= 0 && dead == false)
 {
 	dead = true;
-	show_debug_message("seems like you are died");
+	show_debug_message("seems like you are died ...huh?");
 }
 
-//timer
-/*
-timer ++;
-if(timer > room_speed)
+if(dead)
 {
-	do stuffs
+	respawn --;
+	image_speed = 0;
+	sprite_index = sp_player_died;
+	
+	if(respawn <= 0)
+	{
+		dead = false;
+		respawn = room_speed * 3;
+		room_goto(main_menu);
+	}
 }
-*/

@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "pr_breakable",
-    "path": "objects/pr_breakable/pr_breakable.yy",
+    "name": "ob_parent",
+    "path": "objects/ob_parent/ob_parent.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
