@@ -71,12 +71,14 @@ if(!dead)
 
 
 //sprint
-if(keyboard_check_pressed(vk_shift))
+if(keyboard_check_pressed(vk_shift) && !sprint)
 {
+	sprint = true;
 	w_speed += percent(70);
 }
-else if(keyboard_check_released(vk_shift))
+else if(keyboard_check_released(vk_shift) && sprint)
 {
+	sprint = false;
 	w_speed = global.walk_speed;
 }
 
@@ -135,6 +137,7 @@ if(hp <= 0 && dead == false)
 	show_debug_message("seems like you are died ...huh?");
 }
 
+//respawn
 if(dead)
 {
 	respawn --;
@@ -144,7 +147,7 @@ if(dead)
 	if(respawn <= 0)
 	{
 		dead = false;
-		respawn = room_speed * 3;
+		respawn = respawn_time;
 		room_goto(main_menu);
 	}
 }

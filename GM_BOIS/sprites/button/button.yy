@@ -75,7 +75,6 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"18e64d43-d551-45be-9764-a3f3d6be2461","tags":[],"resourceType":"GMImageLayer",},
   ],
-  "nineSlice": null,
   "parent": {
     "name": "sp_gui",
     "path": "folders/Sprites/sp_gui.yy",

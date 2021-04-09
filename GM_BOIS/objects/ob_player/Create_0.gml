@@ -3,6 +3,10 @@ event_inherited();
 //setup
 hp = 4;
 max_hp = 10;
+
+sap_max = 6;
+sap = sap_max;
+
 damage = 1;
 dead = false;
 
@@ -10,10 +14,13 @@ breakable = false;
 
 allow_cheat = true;
 
-respawn = room_speed * 3;
+sprint = false;
 
 x_speed = 0;
 y_speed = 0;
+
+respawn_time = get_seconds(3);
+respawn = respawn_time;
 
 //higher value to slippery
 stop_speed = 20;

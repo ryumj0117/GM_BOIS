@@ -1,1 +1,1 @@
-if(target == ob_cursor) target = ob_player;
+if(target == ob_cursor || ob_player.sprint) target = ob_player;
