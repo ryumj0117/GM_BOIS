@@ -4,7 +4,7 @@
     "path": "sprites/sp_heart/sp_heart.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": {
     "name": "sp_heart",
     "path": "sprites/sp_heart/sp_heart.yy",

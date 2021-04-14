@@ -102,7 +102,7 @@ else
 }
 
 //damage & heal
-if(keyboard_check_pressed(vk_up) && hp < max_hp && !dead) 
+if(keyboard_check_pressed(vk_up) && hp < hp_max && !dead) 
 {
 	hp += 1;
 	
@@ -121,6 +121,36 @@ if(keyboard_check_pressed(vk_down) && hp > 0 && !dead)
 	
 	//juice
 	juice_up();
+}
+juice_down();
+
+//hunger
+hunger_timer ++;
+if(hunger_timer >= room_speed)
+{
+	hunger_timer = 0;
+	second ++;
+}
+
+if(second >= hunger_time)
+{
+	if(sap >= 0)
+	{
+		sap -= 1;
+	}
+	if(sap < 0) 
+	{
+		hp -= 1;
+		
+		//flash
+		f_color = c_red;
+		f_alpha = 1;
+	
+		//juice
+		juice_up();
+	}
+	//keep reset second
+	second = 0;
 }
 juice_down();
 
@@ -151,3 +181,4 @@ if(dead)
 		room_goto(main_menu);
 	}
 }
+

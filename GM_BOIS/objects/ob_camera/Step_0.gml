@@ -20,3 +20,10 @@ var pm = matrix_build_projection_ortho(camera_x, camera_y, 1, 10000);
 
 camera_set_view_mat(camera, vm);
 camera_set_proj_mat(camera, pm);
+
+//gui
+ob_player.hp_bar_x = x - 900;
+ob_player.hp_bar_y = y - 500;
+
+ob_player.sap_bar_x = x - 900;
+ob_player.sap_bar_y = y - 430;

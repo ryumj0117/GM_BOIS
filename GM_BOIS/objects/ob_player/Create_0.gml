@@ -1,11 +1,11 @@
 event_inherited();
 
 //setup
-hp = 4;
-max_hp = 10;
+hp = 10;
+hp_max = 20;
 
-sap_max = 6;
-sap = sap_max;
+sap = 10;
+sap_max = 10;
 
 damage = 1;
 dead = false;
@@ -21,6 +21,19 @@ y_speed = 0;
 
 respawn_time = get_seconds(3);
 respawn = respawn_time;
+
+//hp bar
+hp_bar_width = hp;
+hp_bar_height = 32;
+hp_bar_x = 0;
+hp_bar_y = 0;
+
+//sap bar
+sap_bar_width = sap;
+sap_bar_height = 32;
+sap_bar_x = 0;
+sap_bar_y = 0;
+
 
 //higher value to slippery
 stop_speed = 20;
@@ -40,3 +53,8 @@ function percent(sp)
 	
 	return result;
 }
+
+//hungry
+hunger_time = 3;
+hunger_timer = 0;
+second = 0;

@@ -4,11 +4,11 @@ y = lerp(y, ob_player.y - 150, 0.03);
 
 if(ob_player.hp >= 0)
 {
-	image_index = ob_player.hp;
+	image_index = ob_player.hp_max / 85 * ob_player.hp;
 }
 
-//fade in / out
-if(ob_player.m_on == false)
+//fade out
+if(keyboard_check(ord("h")))
 {
 	if(timer > 0)
 	{
@@ -17,7 +17,8 @@ if(ob_player.m_on == false)
 	image_alpha = alpha - timer / room_speed;
 }
 
-if(ob_player.m_on == true)
+//fade in
+if(keyboard_check(ord("h")))
 {
 	if(timer < room_speed)
 	{
@@ -28,6 +29,7 @@ if(ob_player.m_on == true)
 
 
 //heart effect
+/*
 if(ob_player.hp >= 10 && ob_heart.image_alpha > 0)
 {
 	color = make_colour_rgb(150, 150, 250);
@@ -58,6 +60,31 @@ else if(ob_player.hp <= 1 && ob_heart.image_alpha > 0)
 		}
 	}
 }
+else if(ob_player.hp <= 2 && ob_heart.image_alpha > 0)
+{
+	color = c_red;
+	scale = lerp(scale, 1.2, 0.1);
+	bg_alpha = lerp(bg_alpha, 0, 0.1);
+
+	if(bg_alpha <= 0) 
+	{
+		if(scale >= 1.2) 
+		{
+			scale = 0;
+			bg_alpha = alpha*10;
+		}
+	}
+}
+else if(ob_player.hp <= 0)
+{
+	bg_alpha = 0;
+}
+else
+{
+	bg_alpha = 0;
+}
+*/
+
 else if(ob_player.hp <= 2 && ob_heart.image_alpha > 0)
 {
 	color = c_red;

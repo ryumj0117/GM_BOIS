@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"get_seconds","path":"scripts/get_seconds/get_seconds.yy",},"order":2,},
+    {"id":{"name":"ob_sap","path":"objects/ob_sap/ob_sap.yy",},"order":3,},
     {"id":{"name":"sp_wall_red","path":"sprites/sp_wall_red/sp_wall_red.yy",},"order":13,},
     {"id":{"name":"Ground_Grass","path":"tilesets/Ground_Grass/Ground_Grass.yy",},"order":0,},
     {"id":{"name":"ob_tree","path":"objects/ob_tree/ob_tree.yy",},"order":0,},
@@ -17,9 +18,12 @@
     {"id":{"name":"ob_heart","path":"objects/ob_heart/ob_heart.yy",},"order":2,},
     {"id":{"name":"sp_tree","path":"sprites/sp_tree/sp_tree.yy",},"order":1,},
     {"id":{"name":"sh_flash","path":"shaders/sh_flash/sh_flash.yy",},"order":0,},
+    {"id":{"name":"hp_bar_bg","path":"sprites/hp_bar_bg/hp_bar_bg.yy",},"order":5,},
     {"id":{"name":"juice","path":"scripts/juice/juice.yy",},"order":0,},
+    {"id":{"name":"sp_sap","path":"sprites/sp_sap/sp_sap.yy",},"order":6,},
     {"id":{"name":"ob_depth_sorter","path":"objects/ob_depth_sorter/ob_depth_sorter.yy",},"order":3,},
     {"id":{"name":"sp_player_left","path":"sprites/sp_player_left/sp_player_left.yy",},"order":2,},
+    {"id":{"name":"hp_bar_border","path":"sprites/hp_bar_border/hp_bar_border.yy",},"order":4,},
     {"id":{"name":"ob_controller","path":"objects/ob_controller/ob_controller.yy",},"order":4,},
     {"id":{"name":"ob_parent","path":"objects/ob_parent/ob_parent.yy",},"order":2,},
     {"id":{"name":"Clicker","path":"sprites/Clicker/Clicker.yy",},"order":2,},
@@ -37,6 +41,7 @@
     {"id":{"name":"main_menu","path":"rooms/main_menu/main_menu.yy",},"order":1,},
     {"id":{"name":"sp_cursor","path":"sprites/sp_cursor/sp_cursor.yy",},"order":1,},
     {"id":{"name":"sp_heart","path":"sprites/sp_heart/sp_heart.yy",},"order":2,},
+    {"id":{"name":"sp_hp","path":"sprites/sp_hp/sp_hp.yy",},"order":3,},
     {"id":{"name":"test","path":"rooms/test/test.yy",},"order":0,},
   ],
   "Options": [

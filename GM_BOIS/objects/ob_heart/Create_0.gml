@@ -8,3 +8,5 @@ image_alpha = alpha;
 bg_alpha = alpha
 
 timer = room_speed;
+
+on = true;
