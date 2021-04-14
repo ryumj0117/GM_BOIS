@@ -1,8 +1,14 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sp_wall",
+    "path": "sprites/sp_wall/sp_wall.yy",
+  },
   "solid": false,
-  "visible": true,
-  "spriteMaskId": null,
+  "visible": false,
+  "spriteMaskId": {
+    "name": "sp_wall",
+    "path": "sprites/sp_wall/sp_wall.yy",
+  },
   "persistent": false,
   "parentObjectId": null,
   "physicsObject": false,
@@ -18,7 +24,9 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":27,"eventType":9,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":27,"eventType":9,"collisionObjectId":null,"parent":{"name":"ob_controller","path":"objects/ob_controller/ob_controller.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"ob_controller","path":"objects/ob_controller/ob_controller.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"ob_controller","path":"objects/ob_controller/ob_controller.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
