@@ -2,4 +2,8 @@ event_inherited();
 
 breakable = true;
 hp = 30;
-sap_max = 20;
+
+sap = true;
+
+cooldown = 30;
+cool_timer = 0;

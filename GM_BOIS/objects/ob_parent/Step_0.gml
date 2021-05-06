@@ -1,5 +1,5 @@
-//click event
-if(clicked)
+//left click event
+if(clicked && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "hp"))
 {
 	if(breakable)
 	{
@@ -9,13 +9,9 @@ if(clicked)
 		f_color = c_white;
 		f_alpha = 1;
 		
-		if(variable_instance_exists(other, "hp"))
-		{
-			hp -= ob_player.damage;
-		}
+		hp -= ob_player.damage;
 	}
 }
-
 //break
 if(variable_instance_exists(other, "hp"))
 {
@@ -25,6 +21,31 @@ if(variable_instance_exists(other, "hp"))
 	}
 }
 
+
+//right click event
+if(sapped && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "sap"))
+{
+	if(breakable && ob_player.sap < ob_player.sap_max && sap == true)
+	{
+		juice_up();
+		
+		//flash
+		f_color = c_yellow;
+		f_alpha = 1;
+		
+		if(sap == true) 
+		{
+			ob_player.sap += 1;
+			sap = false;
+			image_alpha = 0.3;
+		}
+	}
+}
+
+
+
+
+
 //flash down
 if(f_alpha > 0)
 {
@@ -33,3 +54,4 @@ if(f_alpha > 0)
 
 juice_down();
 clicked = false;
+sapped = false;

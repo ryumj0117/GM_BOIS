@@ -1,9 +1,9 @@
 timer = 0;
 
-tree_max = 5;
+tree_max = 10;
 global.tree_count = 0;
 
-bush_max = 50;
+bush_max = 30;
 global.bush_count = 0;
 
 //random location for tree

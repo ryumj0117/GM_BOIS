@@ -1,23 +1,27 @@
 event_inherited();
 
-//setup
-hp = 10;
+//setup default
 hp_max = 20;
+hp = hp_max;
 
-sap = 10;
-sap_max = 10;
+sap_max = 20;
+sap = sap_max;
 
-damage = 1;
 dead = false;
-
-breakable = false;
-
-allow_cheat = true;
 
 sprint = false;
 
 x_speed = 0;
 y_speed = 0;
+
+breakable = false;
+
+allow_cheat = true;
+
+//player
+damage = 1;
+
+break_distance = 50;
 
 respawn_time = get_seconds(3);
 respawn = respawn_time;
@@ -55,6 +59,6 @@ function percent(sp)
 }
 
 //hungry
-hunger_time = 3;
+hunger_time = 5;
 hunger_timer = 0;
 second = 0;

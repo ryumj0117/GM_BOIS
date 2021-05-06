@@ -21,6 +21,7 @@ x_speed -= x_speed / stop_speed;
 y_speed -= y_speed / stop_speed;
 
 //collision
+/*
 if(place_meeting(x + x_speed, y, ob_wall))
 {
 	x_speed = 0;
@@ -29,6 +30,7 @@ if(place_meeting(x, y + y_speed, ob_wall))
 {
 	y_speed = 0;
 }
+*/
 
 //actual move
 if(!dead)
@@ -88,7 +90,7 @@ else if(keyboard_check_released(vk_shift) && sprint)
 if(place_meeting(x, y, ob_cursor) && mouse_check_button(mb_middle) && allow_cheat) m_on = true;
 if(!mouse_check_button(mb_middle)) m_on = false;
 
-if(m_on)
+if(m_on && allow_cheat)
 {
 	ob_cursor.visible = false;
 	juice_up();
@@ -126,7 +128,7 @@ juice_down();
 
 //hunger
 hunger_timer ++;
-if(hunger_timer >= room_speed)
+if(hunger_timer >= room_speed && !dead)
 {
 	hunger_timer = 0;
 	second ++;
@@ -140,7 +142,7 @@ if(second >= hunger_time)
 	}
 	if(sap < 0) 
 	{
-		hp -= 1;
+		hp -= 3;
 		
 		//flash
 		f_color = c_red;
@@ -164,7 +166,7 @@ if(f_alpha > 0)
 if(hp <= 0 && dead == false)
 {
 	dead = true;
-	show_debug_message("seems like you are died ...huh?");
+	show_debug_message("DIED");
 }
 
 //respawn
@@ -181,4 +183,3 @@ if(dead)
 		room_goto(main_menu);
 	}
 }
-
