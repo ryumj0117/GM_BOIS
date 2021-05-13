@@ -17,5 +17,5 @@ draw_sprite(hp_bar_border, 0, hp_bar_x, hp_bar_y);
 
 //sap bar
 draw_sprite(hp_bar_bg, 0, sap_bar_x, sap_bar_y);
-draw_sprite_stretched(sp_sap, 0, sap_bar_x, sap_bar_y, 240 / (sap_max + 1) * sap, sap_bar_height);
+draw_sprite_stretched(sp_sap, 0, sap_bar_x, sap_bar_y, 240 / (sap_max + 1) * player_sap, sap_bar_height);
 draw_sprite(hp_bar_border, 0, sap_bar_x, sap_bar_y);

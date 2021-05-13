@@ -8,7 +8,7 @@ with(ob_parent)
 	*/
 	
 	var sx = -50;
-	var sy = 80;
+	var sy = 50;
 	
 	gpu_set_fog(true, c_black, 0, 1);
 	
@@ -21,8 +21,8 @@ with(ob_parent)
 					y,
 					x - (sprite_width / 2),
 					y,
-					0.5);
-					
+					image_alpha / 2);
+	
 	gpu_set_fog(false, c_white, 0, 0);
 	draw_self();
 }

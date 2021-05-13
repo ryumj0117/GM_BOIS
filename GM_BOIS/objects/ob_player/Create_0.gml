@@ -5,7 +5,7 @@ hp_max = 20;
 hp = hp_max;
 
 sap_max = 20;
-sap = sap_max;
+player_sap = 20;
 
 dead = false;
 
@@ -16,12 +16,16 @@ y_speed = 0;
 
 breakable = false;
 
+p_time = room_speed/10;
+
 allow_cheat = true;
 
 //player
 damage = 1;
 
-break_distance = 50;
+break_distance = 200;
+item_distance = 100;
+sap_distance = 500;
 
 respawn_time = get_seconds(3);
 respawn = respawn_time;
@@ -33,7 +37,7 @@ hp_bar_x = 0;
 hp_bar_y = 0;
 
 //sap bar
-sap_bar_width = sap;
+sap_bar_width = player_sap;
 sap_bar_height = 32;
 sap_bar_x = 0;
 sap_bar_y = 0;
@@ -59,6 +63,11 @@ function percent(sp)
 }
 
 //hungry
-hunger_time = 5;
+hunger_time = 10;
 hunger_timer = 0;
 second = 0;
+
+//inventory
+item_wood = 0;
+item_default_seed = 0;
+

@@ -7,3 +7,5 @@ sap = true;
 
 cooldown = 30;
 cool_timer = 0;
+
+broken = false;

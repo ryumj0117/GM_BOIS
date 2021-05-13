@@ -1,7 +1,10 @@
 //left click event
-if(clicked && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "hp"))
+if(clicked && !ob_player.dead && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "hp"))
 {
-	if(breakable)
+	with(other)
+	{
+		
+	if(breakable && other.hp > 0)
 	{
 		juice_up();
 		
@@ -11,22 +14,40 @@ if(clicked && distance_to_object(ob_player) < ob_player.break_distance && variab
 		
 		hp -= ob_player.damage;
 	}
+	
+	}
 }
 //break
-if(variable_instance_exists(other, "hp"))
+with(other)
 {
-	if(hp <= 0)
+	if(variable_instance_exists(id, "hp") && hp <= 0)
 	{
-		instance_destroy();
+		image_alpha -= image_alpha / 10;
+		
+		image_xscale += 0.01;
+		image_yscale -= 0.02;
+		
+		if(image_alpha <= 0.01)
+		{
+			broken = true;
+			instance_destroy();	
+		}
 	}
 }
 
 
 //right click event
-if(sapped && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "sap"))
-{
-	if(breakable && ob_player.sap < ob_player.sap_max && sap == true)
+if(sapped && !ob_player.dead && distance_to_object(ob_player) < ob_player.break_distance && variable_instance_exists(other, "sap"))
+{	
+	if(breakable && sap == true)
 	{
+		instance_create_layer(x, y, "Instances", ob_sap_item);
+		
+		for(i = 0; i <= 10; i ++)
+		{
+			instance_create_layer(x, y, "Instances", ob_particle);
+		}
+		
 		juice_up();
 		
 		//flash
@@ -35,15 +56,11 @@ if(sapped && distance_to_object(ob_player) < ob_player.break_distance && variabl
 		
 		if(sap == true) 
 		{
-			ob_player.sap += 1;
 			sap = false;
 			image_alpha = 0.3;
 		}
 	}
 }
-
-
-
 
 
 //flash down

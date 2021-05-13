@@ -85,6 +85,14 @@ else if(keyboard_check_released(vk_shift) && sprint)
 }
 
 
+//particle
+p_time ++; 
+if(sprint && p_time >= room_speed/10)
+{
+	instance_create_layer(x, y, "Instances", ob_particle_run);
+	p_time = 0;
+}
+
 
 //test
 if(place_meeting(x, y, ob_cursor) && mouse_check_button(mb_middle) && allow_cheat) m_on = true;
@@ -94,7 +102,16 @@ if(m_on && allow_cheat)
 {
 	ob_cursor.visible = false;
 	juice_up();
-	follow(ob_cursor.x, ob_cursor.y);
+	follow(ob_cursor.x, ob_cursor.y, 10);
+	
+	for(i = 0; i <= 3; i ++)
+	{
+		instance_create_layer(x, y, "Instances", ob_particle);
+	}
+	for(i = 0; i <= 3; i ++)
+	{
+		instance_create_layer(x, y, "Instances", ob_particle_blue);
+	}
 }
 
 else
@@ -111,6 +128,9 @@ if(keyboard_check_pressed(vk_up) && hp < hp_max && !dead)
 	//flash
 	f_color = c_lime;
 	f_alpha = 1.5;
+	
+	//juice
+	juice_up();
 }
 
 if(keyboard_check_pressed(vk_down) && hp > 0 && !dead) 
@@ -136,11 +156,11 @@ if(hunger_timer >= room_speed && !dead)
 
 if(second >= hunger_time)
 {
-	if(sap >= 0)
+	if(player_sap > 0)
 	{
-		sap -= 1;
+		player_sap -= 1;
 	}
-	if(sap < 0) 
+	else if(player_sap <= 0) 
 	{
 		hp -= 3;
 		

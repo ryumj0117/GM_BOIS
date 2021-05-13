@@ -1,0 +1,1 @@
+motion_add(random(360), random(3));

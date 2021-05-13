@@ -1,4 +1,4 @@
-if point_in_rectangle(mouse_x, mouse_y, x - 128, y - 128, x + 128, y + 128)
+if(place_meeting(x, y, ob_cursor))
 {
 	
 	if(mouse_check_button(mb_left))
