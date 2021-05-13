@@ -9,6 +9,14 @@ if(broken)
 //particle
 if(hp <= 0)
 {
-	instance_create_layer(x, y, "Instances", ob_particle_green);
+	if(!p_on) 
+	{
+		
+		for(i = 0; i <= 5; i ++)
+		{
+			instance_create_layer(x, y, "Instances", ob_particle_green);
+		}
+	}
+	p_on = true;
 }
 

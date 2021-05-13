@@ -1,1 +1,1 @@
-motion_add(random(360), random_range(2, 3));
+motion_add(random(360), random_range(3, 5));
