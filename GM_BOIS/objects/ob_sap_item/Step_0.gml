@@ -31,10 +31,18 @@ if(fadding)
 		{
 			with(ob_player)
 			{
-				player_sap ++;
+				for(var i = 0; i < 3; i ++)
+				{
+					if(ob_player.player_sap >= ob_player.sap_max) break;
+					player_sap ++;
+				}
 				
-				f_color = c_lime;
+				f_color = c_navy;
 				f_alpha = 1;
+				for(i = 0; i <= 20; i ++)
+				{
+					instance_create_layer(x, y, "Instances", ob_particle_blue);
+				}
 				juice_up();
 			}
 			instance_destroy();	

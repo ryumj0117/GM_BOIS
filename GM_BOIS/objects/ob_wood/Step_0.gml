@@ -26,9 +26,18 @@ if(taken = true)
 	
 	if(image_alpha <= 0.01)
 	{
-		taken = false;
-		ob_player.item_wood ++;
-		show_debug_message("wood : " + string(ob_player.item_wood));
+		taken = false;	
+		with(ob_player)
+		{
+			f_color = c_white;
+			f_alpha = 1;
+			for(i = 0; i <= 10; i ++)
+			{
+				instance_create_layer(x, y, "Instances", ob_particle);
+			}
+			juice_up();
+		}
+		ds_list_add(inv, "Wood");
 		instance_destroy();	
 	}
 }

@@ -45,13 +45,13 @@ if(sapped && !ob_player.dead && distance_to_object(ob_player) < ob_player.break_
 		
 		for(i = 0; i <= 10; i ++)
 		{
-			instance_create_layer(x, y, "Instances", ob_particle);
+			instance_create_layer(x, y, "Instances", ob_particle_blue);
 		}
 		
 		juice_up();
 		
 		//flash
-		f_color = c_yellow;
+		f_color = c_navy;
 		f_alpha = 1;
 		
 		if(sap == true) 

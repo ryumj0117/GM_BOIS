@@ -11,6 +11,7 @@ if(hp <= 0)
 {
 	if(!p_on) 
 	{
+		instance_create_layer(x, y, "Instances", ob_leaf);
 		
 		for(i = 0; i <= 5; i ++)
 		{

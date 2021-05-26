@@ -89,7 +89,7 @@ else if(keyboard_check_released(vk_shift) && sprint)
 p_time ++; 
 if(sprint && p_time >= room_speed/10)
 {
-	instance_create_layer(x, y, "Instances", ob_particle_run);
+	if(left || right || up || down) instance_create_layer(x, y, "Instances", ob_particle_run);
 	p_time = 0;
 }
 
@@ -104,21 +104,19 @@ if(m_on && allow_cheat)
 	juice_up();
 	follow(ob_cursor.x, ob_cursor.y, 10);
 	
-	for(i = 0; i <= 3; i ++)
+	if(particle_time >= room_speed/particle_count) 
 	{
+		particle_time = 0;
 		instance_create_layer(x, y, "Instances", ob_particle);
-	}
-	for(i = 0; i <= 3; i ++)
-	{
 		instance_create_layer(x, y, "Instances", ob_particle_blue);
 	}
 }
-
 else
 {
 	ob_cursor.visible = true;
 	juice_down();
 }
+particle_time ++;
 
 //damage & heal
 if(keyboard_check_pressed(vk_up) && hp < hp_max && !dead) 
@@ -127,7 +125,30 @@ if(keyboard_check_pressed(vk_up) && hp < hp_max && !dead)
 	
 	//flash
 	f_color = c_lime;
-	f_alpha = 1.5;
+	f_alpha = 1;
+	
+	for(i = 0; i <= 20; i ++)
+	{
+		instance_create_layer(x, y, "Instances", ob_particle_lime);
+	}
+	
+	//juice
+	juice_up();
+}
+
+//damage
+function damaged(value)
+{
+	hp -= value;
+	
+	//flash
+	f_color = c_red;
+	f_alpha = 1;
+	
+	for(i = 0; i <= 10; i ++)
+	{
+		instance_create_layer(x, y, "Instances", ob_particle_red);
+	}
 	
 	//juice
 	juice_up();
@@ -135,14 +156,7 @@ if(keyboard_check_pressed(vk_up) && hp < hp_max && !dead)
 
 if(keyboard_check_pressed(vk_down) && hp > 0 && !dead) 
 {
-	hp -= 1;
-	
-	//flash
-	f_color = c_red;
-	f_alpha = 1;
-	
-	//juice
-	juice_up();
+	damaged(1);
 }
 juice_down();
 
@@ -162,14 +176,7 @@ if(second >= hunger_time)
 	}
 	else if(player_sap <= 0) 
 	{
-		hp -= 3;
-		
-		//flash
-		f_color = c_red;
-		f_alpha = 1;
-	
-		//juice
-		juice_up();
+		damaged(3);
 	}
 	//keep reset second
 	second = 0;
@@ -187,6 +194,10 @@ if(hp <= 0 && dead == false)
 {
 	dead = true;
 	show_debug_message("DIED");
+	for(i = 0; i <= 30; i ++)
+	{
+		instance_create_layer(x, y, "Instances", ob_particle_died);
+	}
 }
 
 //respawn
@@ -203,3 +214,5 @@ if(dead)
 		room_goto(main_menu);
 	}
 }
+
+

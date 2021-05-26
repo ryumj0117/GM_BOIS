@@ -1,6 +1,6 @@
 timer = 0;
 
-tree_max = 20;
+tree_max = 5;
 global.tree_count = 0;
 
 bush_max = 30;

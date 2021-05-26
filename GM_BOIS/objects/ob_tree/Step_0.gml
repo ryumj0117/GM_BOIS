@@ -27,10 +27,6 @@ if(hp <= 0)
 	if(!p_on) 
 	{
 		instance_create_layer(x, y, "Instances", ob_wood);
-		for(i = 0; i <= 10; i ++)
-		{
-			instance_create_layer(x, y, "Instances", ob_particle);
-		}
 		
 		for(i = 0; i <= 5; i ++)
 		{

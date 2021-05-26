@@ -62,12 +62,25 @@ function percent(sp)
 	return result;
 }
 
+//particle
+particle_time = 0;
+particle_count = 50;
+
 //hungry
-hunger_time = 10;
+hunger_time = 5;
 hunger_timer = 0;
 second = 0;
 
+//dev
+dev = false;
+
 //inventory
-item_wood = 0;
-item_default_seed = 0;
+globalvar inv;
+inv = ds_list_create();
+
+
+
+
+
+
 
