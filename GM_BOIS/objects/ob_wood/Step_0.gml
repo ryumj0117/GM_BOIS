@@ -7,14 +7,15 @@ x_speed -= x_speed / 10;
 y_speed -= y_speed / 10;
 
 
-if(distance_to_object(ob_player) < ob_player.item_distance)
+if(distance_to_object(ob_player) < ob_player.item_distance && ds_list_size(inv) < 6)
 {
 	follow(ob_player.x, ob_player.y, 2);
 }
 
-if(distance_to_object(ob_player) <= 0)
+if(distance_to_object(ob_player) <= 0 && taken == false && ds_list_size(inv) < 6)
 {
 	taken = true;
+	item_info = "wood";
 }
 
 if(taken = true)

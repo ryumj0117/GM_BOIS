@@ -78,6 +78,10 @@ dev = false;
 globalvar inv;
 inv = ds_list_create();
 
+globalvar item_info;
+globalvar taken;
+taken = false;
+
 
 
 

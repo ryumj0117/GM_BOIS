@@ -1,7 +1,5 @@
 event_inherited();
 
-taken = false;
-
 slip = 5;
 
 r_x = 0;

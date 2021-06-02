@@ -21,10 +21,13 @@ draw_sprite_stretched(sp_sap, 0, sap_bar_x, sap_bar_y, 240 / (sap_max + 1) * pla
 draw_sprite(hp_bar_border, 0, sap_bar_x, sap_bar_y);
 
 //inventory
+/*
 for(var i=0; i<ds_list_size(inv); i++)
 {
 	draw_text_transformed(ob_camera.x + 700, ob_camera.y-500 + (70*i), inv[| i], 5, 5, 0);
 }
+*/
+
 
 if(dev) draw_text_transformed(ob_camera.x - 300, ob_camera.y - 500, "FPS : " + string(fps_real), 3, 3, 0);
 
